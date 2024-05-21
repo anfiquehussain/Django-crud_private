@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block title %}delete page{% endblock %}
+
+{% block style %}
+<style>
+    h1{
+        display: flex;
+        justify-content: center;
+        background-color: rgba(128, 128, 128, 0.689);
+        color: black;
+    }
+   .card img {
+        height: 150px;
+        width: 100%;
+        object-fit: fill;
+    }
+    .card-body {
+        padding: 15px;
+    }
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+    .card-text {
+        font-size: 1rem;
+        color: #555;
+    }
+</style>
+{% endblock %}
+{% block content %}
+{% include 'navbar.html' %}
+<h1>Delete</h1>
+<div class="container my-2">
+    <div class="row">
+        {% for prd in products %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src="{{ prd.image.url }}" class="card-img-top" alt="{{ prd.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ prd.name }}</h5>
+                    <p class="card-text">{{ prd.description }}</p>
+                    <p class="card-text"><strong>${{ prd.price }}</strong></p>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{ prd.id }}">
+                        Delete
+                    </button>
+                    <div class="modal fade" id="exampleModal{{ prd.id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ prd.id }}" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel{{ prd.id }}">Delete Product: {{ prd.name }}</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form action="{% url 'delete' %}" method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="product_id" value="{{ prd.id }}">
+                                    
+                                    
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-danger">delete</button>
+                                    </div>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

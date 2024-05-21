@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block title %}home page{% endblock %}
+
+
+{% block content %}
+
+{% block style %}
+<style>
+    .card img {
+        height: 150px;
+        width: 100%;
+        object-fit: fill;
+    }
+    .card-body {
+        padding: 15px;
+    }
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+    .card-text {
+        font-size: 1rem;
+        color: #555;
+    }
+</style>
+{% endblock %}
+{% include 'navbar.html' %}
+
+<div class="container my-2">
+    <div class="row">
+        {% for prd in product %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src="{{ prd.image.url }}" class="card-img-top" alt="{{ prd.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ prd.name }}</h5>
+                    <p class="card-text">{{ prd.description }}</p>
+                    <p class="card-text"><strong>${{ prd.price }}</strong></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
