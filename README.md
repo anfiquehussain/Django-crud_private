@@ -67,8 +67,6 @@ C:.
 │   └───__pycache__
 ├───crud_project
 │   └───__pycache__
-├───demo
-│   └───migrations
 ├───media
 │   └───products
 ```
@@ -80,8 +78,6 @@ C:.
   - `__pycache__/`: Compiled Python files.
 - `crud_project/`: Project configuration directory.
   - `__pycache__/`: Compiled Python files.
-- `demo/`: Demo application directory.
-  - `migrations/`: Database migrations for demo.
 - `media/`: Directory for storing media files.
   - `products/`: Directory for product images and files.
 
