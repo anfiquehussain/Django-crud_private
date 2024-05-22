@@ -2,9 +2,11 @@
 *.log
 *.pot
 *.pyc
-__pycache__/
+__pycache__
 db.sqlite3
-media/
+media
+
+# Backup files # 
 *.bak 
 
 # If you are using PyCharm # 
@@ -14,7 +16,6 @@ media/
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-
 
 # AWS User-specific
 .idea/**/aws.xml
@@ -37,18 +38,6 @@ media/
 
 # File-based project format
 *.iws
-
-
-# IDE-specific files and directories
-.idea/
-*.iml
-
-# Python __pycache__ directories
-__pycache__/
-
-# Media folder and its contents
-media/
-
 
 # IntelliJ
 out/
@@ -73,6 +62,7 @@ parts/
 sdist/ 
 var/ 
 wheels/ 
+*.whl
 *.egg-info/ 
 .installed.cfg 
 *.egg 
