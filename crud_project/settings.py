@@ -14,12 +14,16 @@ from pathlib import Path
 import os
 
 
+SECRET_KEY = 'uDs1taG8QEdiOBrOr6PtVK-s2TpbdxiyTFvLCkZd0ya5OvFD30De1O_Snbxeu1AqfS4'
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['*'] 
+# Update ALLOWED_HOSTS with your production domain(s) later in Railway
+ALLOWED_HOSTS = [] 
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -68,14 +72,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'crud_project.wsgi.application'
 
-
-# Database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',  # Replace with your actual database name
+        'USER': 'postgres',  # Replace with your PostgreSQL username provided by Railway
+        'PASSWORD': 'cHbIUImOIPBZAaRxKiWeBskgdNgTYQIt',  # Replace with your PostgreSQL password provided by Railway
+        'HOST': 'monorail.proxy.rlwy.net',  # Replace with your PostgreSQL host provided by Railway
+        'PORT': '42457',  # Replace with your PostgreSQL port provided by Railway
     }
 }
+
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
