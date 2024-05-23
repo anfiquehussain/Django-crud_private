@@ -9,7 +9,4 @@ urlpatterns = [
     path('create', views.create,name='create'),
     path('update', views.update,name='update'),
     path('delete', views.delete,name='delete'),
-]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
