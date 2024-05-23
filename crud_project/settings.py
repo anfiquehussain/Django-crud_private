@@ -16,11 +16,10 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'your_secret_key_here'  # Change this to a random, unique value
 
 DEBUG = False  # Set to True only in development
 
-ALLOWED_HOSTS = ['yourdomain.com', '']  # Add your domain(s) here
+ALLOWED_HOSTS = [*]  # Add your domain(s) here
 
 # Application definition
 INSTALLED_APPS = [
