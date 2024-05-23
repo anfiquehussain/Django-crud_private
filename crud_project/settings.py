@@ -17,11 +17,10 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-DEBUG = False  # Set to True only in development
+DEBUG = False
 
-ALLOWED_HOSTS = [*]  # Add your domain(s) here
+ALLOWED_HOSTS = ['*'] 
 
-# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -32,7 +31,6 @@ INSTALLED_APPS = [
     'crud_app',
     'crispy_forms',
     'crispy_bootstrap5',
-    'whitenoise.runserver_nostatic',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
