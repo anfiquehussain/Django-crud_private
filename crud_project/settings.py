@@ -13,9 +13,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 
-
-import dj_database_url
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@2=rthudrvs^@p+l_fd2yay-ond2+*5w!u3w8(9azwsywc)w!y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['django-crud-8v3b.onrender.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -79,8 +76,14 @@ TEMPLATES = [
 WSGI_APPLICATION = 'crud_project.wsgi.application'
 
 
+# Database
+# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+
 DATABASES = {
-    'default': dj_database_url.parse("postgres://jobnest_user:NyOyH12hERfnn91mcN29DHAzfW9mOKz7@dpg-cp6rdra0si5c73aj5170-a.oregon-postgres.render.com/jobnest")
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
