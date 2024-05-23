@@ -19,7 +19,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = False  # Set to True only in development
 
-ALLOWED_HOSTS = [*]  # Add your domain(s) here
+ALLOWED_HOSTS = ['*']
+  # Add your domain(s) here
 
 # Application definition
 INSTALLED_APPS = [
